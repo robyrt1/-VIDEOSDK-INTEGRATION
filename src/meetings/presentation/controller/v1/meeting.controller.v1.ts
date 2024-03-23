@@ -2,8 +2,6 @@ import { inject } from 'inversify';
 import { controller, httpPost, requestBody, requestHeaders } from 'inversify-express-utils';
 import { MEETING_USECASE_IOC_IDS } from '../../../infrastructure/IOC/meeting.usecase.ioc.identifiers';
 import { IInitConfigUsecaseV1Port } from '../../../domain/port/usecase/v1/init-config.usecase.v1.port';
-import { Request } from 'express';
-import { get } from 'lodash';
 
 @controller('/api/v1/meeting')
 export class MeetingControllerV1 {

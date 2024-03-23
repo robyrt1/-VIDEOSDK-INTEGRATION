@@ -4,7 +4,10 @@ import { inject } from 'inversify';
 import { ICreateRoomV1UsecasePort } from '../../../domain/port/usecases/v1/create-room.v1.usecase.port';
 import { get } from 'lodash';
 import { IValidateRoomUsecaseV1Port } from '../../..//domain/port/usecases/v1/validate-room.v1.usecase.port';
-import { DeactivateRoomUsecaseV1Input, IDeactivateRoomUsecaseV1Port } from '../../../domain/port/usecases/v1/deactivate-room.v1.usecase.port';
+import {
+  DeactivateRoomUsecaseV1Input,
+  IDeactivateRoomUsecaseV1Port,
+} from '../../../domain/port/usecases/v1/deactivate-room.v1.usecase.port';
 
 @controller('/api/v1/room')
 export class RoomControllerV1 {
@@ -26,8 +29,11 @@ export class RoomControllerV1 {
   }
 
   @httpPost('/deactivate')
-  async deactivateRoom(@requestHeaders() header: any, @requestBody() body:Omit<DeactivateRoomUsecaseV1Input, 'token'>){
+  async deactivateRoom(
+    @requestHeaders() header: any,
+    @requestBody() body: Omit<DeactivateRoomUsecaseV1Input, 'token'>,
+  ) {
     const getToken = get(header, 'authorization', '');
-    return this.deactivateRoomUsecaseV1.execute({...body, token:getToken})
+    return this.deactivateRoomUsecaseV1.execute({ ...body, token: getToken });
   }
 }

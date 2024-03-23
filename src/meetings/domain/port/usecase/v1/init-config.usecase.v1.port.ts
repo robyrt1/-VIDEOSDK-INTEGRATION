@@ -1,7 +1,4 @@
 import { UsecasePort } from '../../../../../shared/application/port/usecases/use-case.port';
-export interface InitConfigUsecaseV1Input {
-  roomId: string;
-  token: string;
-}
+import { IInitConfigData, IInitConfigPayload } from '../../../../application/types/init-config.types';
 
-export type IInitConfigUsecaseV1Port<Output = any, Input = InitConfigUsecaseV1Input> = UsecasePort<Output, Input>;
+export type IInitConfigUsecaseV1Port<Output = IInitConfigData, Input = IInitConfigPayload> = UsecasePort<Output, Input>;

@@ -1,4 +1,4 @@
-import { UsecasePort } from "../../../../../shared/application/port/usecases/use-case.port";
+import { UsecasePort } from '../../../../../shared/application/port/usecases/use-case.port';
 export interface IValidateRoomUsecaseV1Input {
   roomId: string;
   token: string;

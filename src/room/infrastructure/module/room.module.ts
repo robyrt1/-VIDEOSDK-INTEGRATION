@@ -4,9 +4,9 @@ import { ICreateRoomV1UsecasePort } from '../../domain/port/usecases/v1/create-r
 import { IValidateRoomUsecaseV1Port } from '../../domain/port/usecases/v1/validate-room.v1.usecase.port';
 import { IDeactivateRoomUsecaseV1Port } from '../../domain/port/usecases/v1/deactivate-room.v1.usecase.port';
 
-import { CreateRoomUseCaseV1 } from '../../usecases/v1/create-room.usecase.v1';
-import { ValidateRoomUseCaseV1 } from '../../usecases/v1/validate-room.uesecase.v1';
-import { DeactivateARoomUsecaseV1 } from '../../usecases/v1/deactivate-a-room.usecase.v1';
+import { CreateRoomUseCaseV1 } from '../../application/usecases/v1/create-room.usecase.v1';
+import { ValidateRoomUseCaseV1 } from '../../application/usecases/v1/validate-room.uesecase.v1';
+import { DeactivateARoomUsecaseV1 } from '../../application/usecases/v1/deactivate-a-room.usecase.v1';
 
 export default (container: Container): Container => {
   container.bind<ICreateRoomV1UsecasePort>(ROOM_USECASES_IOC_IDS.CREATE).to(CreateRoomUseCaseV1);

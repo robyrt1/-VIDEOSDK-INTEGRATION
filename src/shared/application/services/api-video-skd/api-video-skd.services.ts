@@ -69,4 +69,36 @@ export class ApiVideoSKDServices {
 
     return data.data;
   }
+
+  async fetchSessions(token: string, roomId: string) {
+    const apiUrl = this.urlBase + 'sessions';
+    const data = await axios({
+      method: HTTP_METHODS.POST,
+      url: apiUrl,
+      data: { roomId },
+      headers: {
+        authorization: token,
+        'Content-Type': 'application/json',
+      },
+      params: {
+        roomId,
+      },
+    });
+
+    return data.data;
+  }
+
+  async fetchASessions(token: string, id: string) {
+    const apiUrl = this.urlBase + 'sessions/' + id;
+    const data = await axios({
+      method: HTTP_METHODS.GET,
+      url: apiUrl,
+      headers: {
+        authorization: token,
+        'Content-Type': 'application/json',
+      },
+    });
+
+    return data.data;
+  }
 }

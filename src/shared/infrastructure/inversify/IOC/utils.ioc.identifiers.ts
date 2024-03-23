@@ -1,3 +1,1 @@
-export const UTILS_IOC_IDS = {
-  
-}
+export const UTILS_IOC_IDS = {};
